@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "d677c177-e0d7-4f18-81bb-470d1de1dd4e",
+		"name": "TicTacToe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3189315"
+	},
+	"item": [
+		{
+			"name": "Game State",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tictactoe/{{gameId}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe",
+						"{{gameId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "In Progress Games",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tictactoe",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"players\": [\n        \"x\",\n        \"o\"\n    ],\n    \"cols\": 3,\n    \"rows\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/tictactoe",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "All Moves in A Game",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tictactoe/{{gameId}}/moves",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe",
+						"{{gameId}}",
+						"moves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post a Move",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"row\": 1,\n    \"col\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/tictactoe/{{gameId}}/{{playerName}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe",
+						"{{gameId}}",
+						"{{playerName}}"
+					],
+					"query": [
+						{
+							"key": "gameId",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Moves per Game",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tictactoe/{{gameId}}/moves",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe",
+						"{{gameId}}",
+						"moves"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Move Detail",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/tictactoe/{{gameId}}/moves/{{moveNumber}}",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe",
+						"{{gameId}}",
+						"moves",
+						"{{moveNumber}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Quit Game",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"move\": {\n        \"row\": 1,\n        \"col\": 2\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/tictactoe/{{gameId}}/{{playerName}}/quit",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tictactoe",
+						"{{gameId}}",
+						"{{playerName}}",
+						"quit"
+					],
+					"query": [
+						{
+							"key": "gameId",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
